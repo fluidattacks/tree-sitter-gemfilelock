@@ -1,0 +1,140 @@
+==================
+Basic GEM section
+==================
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rails (7.0.3.1)
+      actioncable (= 7.0.3.1)
+      actionview (= 7.0.3.1)
+
+---
+
+(document
+  (section
+    (gem_section
+      (section_content
+        (key_value
+          (identifier)
+          (string))
+        (specs
+          (gem_entry_with_dependencies
+            (gem_entry
+              (gem_name)
+              (version
+                (number)
+                (number)
+                (number)
+                (number)))
+            (indented_dependency
+              (indent)
+              (dependency
+                (gem_name)
+                (constraint
+                  (comparison
+                    (version
+                      (number)
+                      (number)
+                      (number)
+                      (number))))))
+            (indented_dependency
+              (indent)
+              (dependency
+                (gem_name)
+                (constraint
+                  (comparison
+                    (version
+                      (number)
+                      (number)
+                      (number)
+                      (number))))))))))))
+==================
+PLATFORMS section
+==================
+
+PLATFORMS
+  ruby
+  x86_64-darwin-20
+
+---
+
+(document
+  (platforms
+    (platform_name)
+    (platform_name)))
+
+====================
+DEPENDENCIES section
+====================
+
+DEPENDENCIES
+  bootsnap
+  debug
+  rails (~> 7.0.3, >= 7.0.3.1)
+  redis (~> 4.0)
+
+---
+
+(document
+  (dependencies
+    (dependency
+      (gem_name))
+    (dependency
+      (gem_name))
+    (dependency
+      (gem_name)
+      (constraint
+        (tilde
+          (version
+            (number)
+            (number)
+            (number)))
+        (comparison
+          (version
+            (number)
+            (number)
+            (number)
+            (number)))))
+    (dependency
+      (gem_name)
+      (constraint
+        (tilde
+          (version
+            (number)
+            (number)))))))
+====================
+RUBY VERSION section
+====================
+
+RUBY VERSION
+   ruby 3.1.0p0
+
+---
+
+(document
+  (ruby_version
+    (ruby_version_entry
+      (version
+        (number)
+        (number)
+        (number))
+      (ruby_patch
+        (number)))))
+
+====================
+BUNDLED WITH section
+====================
+
+BUNDLED WITH
+   2.3.14
+
+---
+
+(document
+  (bundled_with
+    (bundled_with_entry
+      (version
+        (number)
+        (number)
+        (number)))))

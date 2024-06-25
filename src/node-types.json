@@ -57,10 +57,6 @@
           "named": true
         },
         {
-          "type": "constraint",
-          "named": true
-        },
-        {
           "type": "exact",
           "named": true
         },
@@ -80,7 +76,7 @@
       "required": true,
       "types": [
         {
-          "type": "dependency_entry",
+          "type": "dependency",
           "named": true
         }
       ]
@@ -121,46 +117,6 @@
           {
             "type": "constraint",
             "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "dependency_entry",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "gem_name",
-            "named": true
-          }
-        ]
-      },
-      "value": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "constraint",
-            "named": true
-          }
-        ]
-      },
-      "version": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "(",
-            "named": false
-          },
-          {
-            "type": ")",
-            "named": false
           }
         ]
       }

@@ -31,13 +31,13 @@ module.exports = grammar({
 
     platforms: ($) => seq("PLATFORMS", repeat1($.platform_name)),
 
-    dependencies: ($) => seq("DEPENDENCIES", repeat1($.dependency_entry)),
+    dependencies: ($) => seq("DEPENDENCIES", repeat1($.dependency)),
 
-    dependency_entry: ($) =>
-      seq(
-        field("name", $.gem_name),
-        optional(field("version", seq("(", field("value", $.constraint), ")")))
-      ),
+    // dependency_entry: ($) =>
+    //   seq(
+    //     field("name", $.gem_name),
+    //     optional(field("version", seq("(", field("value", $.constraint), ")")))
+    //   ),
 
     ruby_version: ($) => seq("RUBY VERSION", $.ruby_version_entry),
 
@@ -73,16 +73,13 @@ module.exports = grammar({
       ),
 
     constraint: ($) =>
-      seq(
-        choice($.tilde, $.comparison, $.exact),
-        optional(seq(",", $.constraint))
-      ),
+      repeat1(seq(choice($.tilde, $.comparison, $.exact), optional(","))),
 
     tilde: ($) => seq("~>", $.version),
     comparison: ($) => seq(choice(">=", "<=", ">", "<", "="), $.version),
     exact: ($) => $.version,
 
-    version: ($) => repeat1(seq( $.number, optional("."),)),
+    version: ($) => prec.right(repeat1(seq($.number, optional(".")))),
 
     identifier: ($) => /[a-zA-Z_][a-zA-Z0-9_-]*/,
     indent: ($) => /[ \t]+/,

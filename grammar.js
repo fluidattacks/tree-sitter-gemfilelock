@@ -1,5 +1,5 @@
 module.exports = grammar({
-  name: "gemfile",
+  name: "gemfilelock",
 
   rules: {
     document: ($) =>

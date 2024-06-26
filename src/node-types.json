@@ -221,7 +221,7 @@
           "named": true
         },
         {
-          "type": "indented_dependency",
+          "type": "sub_dependency",
           "named": true
         }
       ]
@@ -252,25 +252,6 @@
       "types": [
         {
           "type": "section_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "indented_dependency",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "dependency",
-          "named": true
-        },
-        {
-          "type": "indent",
           "named": true
         }
       ]
@@ -433,6 +414,25 @@
       "types": [
         {
           "type": "gem_entry_with_dependencies",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sub_dependency",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "dependency",
+          "named": true
+        },
+        {
+          "type": "indent",
           "named": true
         }
       ]

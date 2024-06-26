@@ -265,7 +265,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "indented_dependency"
+            "name": "sub_dependency"
           }
         }
       ]
@@ -312,7 +312,7 @@
         ]
       }
     },
-    "indented_dependency": {
+    "sub_dependency": {
       "type": "SEQ",
       "members": [
         {

@@ -33,12 +33,6 @@ module.exports = grammar({
 
     dependencies: ($) => seq("DEPENDENCIES", repeat1($.dependency)),
 
-    // dependency_entry: ($) =>
-    //   seq(
-    //     field("name", $.gem_name),
-    //     optional(field("version", seq("(", field("value", $.constraint), ")")))
-    //   ),
-
     ruby_version: ($) => seq("RUBY VERSION", $.ruby_version_entry),
 
     bundled_with: ($) => seq("BUNDLED WITH", $.bundled_with_entry),
@@ -50,7 +44,7 @@ module.exports = grammar({
     bundled_with_entry: ($) => $.version,
 
     gem_entry_with_dependencies: ($) =>
-      seq($.gem_entry, repeat($.indented_dependency)),
+      seq($.gem_entry, repeat($.sub_dependency)),
 
     gem_entry: ($) =>
       prec.right(
@@ -61,7 +55,7 @@ module.exports = grammar({
         )
       ),
 
-    indented_dependency: ($) => seq($.indent, $.dependency),
+    sub_dependency: ($) => seq($.indent, $.dependency),
 
     dependency: ($) =>
       seq(

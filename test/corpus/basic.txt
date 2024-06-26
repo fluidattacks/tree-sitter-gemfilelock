@@ -27,7 +27,7 @@ GEM
                 (number)
                 (number)
                 (number)))
-            (indented_dependency
+            (sub_dependency
               (indent)
               (dependency
                 (gem_name)
@@ -38,7 +38,7 @@ GEM
                       (number)
                       (number)
                       (number))))))
-            (indented_dependency
+            (sub_dependency
               (indent)
               (dependency
                 (gem_name)

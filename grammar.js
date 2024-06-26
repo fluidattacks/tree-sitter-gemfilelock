@@ -80,7 +80,7 @@ module.exports = grammar({
       repeat1(seq(choice($.tilde, $.comparison, $.exact), optional(","))),
 
     tilde: ($) => seq("~>", $.version),
-    comparison: ($) => seq(choice(">=", "<=", ">", "<", "="), $.version),
+    comparison: ($) => seq(choice(">=", "<=", ">", "<", "=", "!="), $.version),
     exact: ($) => $.version,
 
     version: ($) => prec.right(repeat1(seq($.number, optional(".")))),

@@ -5,40 +5,44 @@ Basic GEM section
 GEM
   remote: https://rubygems.org/
   specs:
-    rails (7.0.3.1)
-      actioncable (= 7.0.3.1)
-      actionview (= 7.0.3.1)
+    actionmailer (4.1.1)
+      actionpack (= 4.1.1)
+    actionpack (4.1.1)
+      actionview (= 4.1.1)
+      activesupport (= 4.1.1)
+    actionview (4.1.1)
+      activesupport (= 4.1.1)
 
 ---
-
-(document
-    (gem_section
-      (section_content
-        (key_value
-          (identifier)
-          (string))
-        (specs
-          (gem_entry_with_dependencies
-            (gem_entry
-              (gem_name)
-              (version
-                (number)
-                (number)
-                (number)
-                (number)))
-            (sub_dependency
-              (indent)
+    (document
+      (gem_section
+        (section_content
+          (key_value
+            (identifier)
+            (string))
+          (specs
+            (gem_entry_with_dependencies
+              (gem_entry
+                (gem_name)
+                (version
+                  (number)
+                  (number)
+                  (number)))
               (dependency
                 (gem_name)
                 (constraint
                   (comparison
                     (version
-                      (number)
                       (number)
                       (number)
                       (number))))))
-            (sub_dependency
-              (indent)
+            (gem_entry_with_dependencies
+              (gem_entry
+                (gem_name)
+                (version
+                  (number)
+                  (number)
+                  (number)))
               (dependency
                 (gem_name)
                 (constraint
@@ -46,8 +50,30 @@ GEM
                     (version
                       (number)
                       (number)
+                      (number)))))
+              (dependency
+                (gem_name)
+                (constraint
+                  (comparison
+                    (version
                       (number)
-                      (number)))))))))))
+                      (number)
+                      (number))))))
+            (gem_entry_with_dependencies
+              (gem_entry
+                (gem_name)
+                (version
+                  (number)
+                  (number)
+                  (number)))
+              (dependency
+                (gem_name)
+                (constraint
+                  (comparison
+                    (version
+                      (number)
+                      (number)
+                      (number))))))))))
 ==================
 PLATFORMS section
 ==================

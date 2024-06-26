@@ -225,11 +225,11 @@
       "required": true,
       "types": [
         {
-          "type": "gem_entry",
+          "type": "dependency",
           "named": true
         },
         {
-          "type": "sub_dependency",
+          "type": "gem_entry",
           "named": true
         }
       ]
@@ -405,25 +405,6 @@
     }
   },
   {
-    "type": "sub_dependency",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "dependency",
-          "named": true
-        },
-        {
-          "type": "indent",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "tilde",
     "named": true,
     "fields": {},
@@ -527,10 +508,6 @@
   },
   {
     "type": "identifier",
-    "named": true
-  },
-  {
-    "type": "indent",
     "named": true
   },
   {

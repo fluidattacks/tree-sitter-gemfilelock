@@ -6,6 +6,7 @@
             "sources": [
                 "bindings/node/binding.cc",
                 "src/parser.c",
+                "src/scanner.c",
                 # If your language uses an external scanner, add it here.
             ],
             "cflags_c": [

@@ -1,6 +1,11 @@
 module.exports = grammar({
   name: "gemfilelock",
 
+  externals: $ => [
+    $._indent,
+    $._dedent
+  ],
+
   rules: {
     document: ($) =>
       repeat(
@@ -44,7 +49,14 @@ module.exports = grammar({
     bundled_with_entry: ($) => $.version,
 
     gem_entry_with_dependencies: ($) =>
-      seq($.gem_entry, repeat($.sub_dependency)),
+      seq(
+        $.gem_entry,
+        optional(seq(
+          $._indent,
+          repeat1($.dependency),
+          $._dedent
+        ))
+      ),
 
     gem_entry: ($) =>
       prec.right(
@@ -54,8 +66,6 @@ module.exports = grammar({
           field("version", seq("(", field("value", $.version), ")"))
         )
       ),
-
-    sub_dependency: ($) => seq($.indent, $.dependency),
 
     dependency: ($) =>
       seq(
@@ -76,7 +86,6 @@ module.exports = grammar({
     version: ($) => prec.right(repeat1(seq($.number, optional(".")))),
 
     identifier: ($) => /[a-zA-Z_][a-zA-Z0-9_-]*/,
-    indent: ($) => /[ \t]+/,
     gem_name: ($) => /[a-zA-Z0-9_!+-]+/,
     string: ($) => /.+/,
     number: ($) => /\d+/,

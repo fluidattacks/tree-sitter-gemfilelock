@@ -12,7 +12,6 @@ GEM
 ---
 
 (document
-  (section
     (gem_section
       (section_content
         (key_value
@@ -48,7 +47,7 @@ GEM
                       (number)
                       (number)
                       (number)
-                      (number))))))))))))
+                      (number)))))))))))
 ==================
 PLATFORMS section
 ==================
@@ -103,6 +102,7 @@ DEPENDENCIES
           (version
             (number)
             (number)))))))
+
 ====================
 RUBY VERSION section
 ====================

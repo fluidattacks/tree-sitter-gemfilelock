@@ -8,7 +8,15 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "section"
+            "name": "path_section"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "git_section"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "gem_section"
           },
           {
             "type": "SYMBOL",
@@ -28,23 +36,6 @@
           }
         ]
       }
-    },
-    "section": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "path_section"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "git_section"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "gem_section"
-        }
-      ]
     },
     "path_section": {
       "type": "SEQ",
@@ -178,7 +169,7 @@
           "value": "DEPENDENCIES"
         },
         {
-          "type": "REPEAT1",
+          "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
             "name": "dependency"

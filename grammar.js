@@ -5,15 +5,15 @@ module.exports = grammar({
     document: ($) =>
       repeat(
         choice(
-          $.section,
+          $.path_section,
+          $.git_section,
+          $.gem_section,
           $.platforms,
           $.dependencies,
           $.ruby_version,
-          $.bundled_with
+          $.bundled_with,
         )
       ),
-
-    section: ($) => choice($.path_section, $.git_section, $.gem_section),
 
     path_section: ($) => seq("PATH", $.section_content),
 
@@ -31,7 +31,7 @@ module.exports = grammar({
 
     platforms: ($) => seq("PLATFORMS", repeat1($.platform_name)),
 
-    dependencies: ($) => seq("DEPENDENCIES", repeat1($.dependency)),
+    dependencies: ($) => seq("DEPENDENCIES", repeat($.dependency)),
 
     ruby_version: ($) => seq("RUBY VERSION", $.ruby_version_entry),
 
